@@ -1,7 +1,7 @@
 {
   "name": "log-cb",
   "description": "A better looking method to format errors and data from a callback.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jamen/log-cb",
   "author": "Jamen Marz (https://github.com/jamen)",
   "repository": "jamen/log-cb",
