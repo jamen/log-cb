@@ -7,12 +7,10 @@
 fs.readFile('LICENSE', log('Success!', 'Error :<'));
 
 // Or promises
-Promise.reject(new Error('hi'))
-.catch(log('', 'Error happened'));
+foo(10).catch(log('', 'Error happened'));
 
 // You can use log.err above instead:
-Promise.reject(new Error('hi again'))
-.catch(log.err('Error happened'));
+bar(99).catch(log.err('Error happened'));
 ```
 
 ## Installation
@@ -25,7 +23,17 @@ $ npm install --save log-cb
 
 ### `log(passMessage, [failMessage])`
 Log custom message for passing
- - `passMessage`: What to log if
+ - `passMessage`: What to log if your callback has no errors.
+ - `failMessage`: What to log if your callback has errors.  Defaults to something custom.
+
+### `log.err(failMessage, [passMessage])`
+The reverse of the original function, for better syntax:
+
+```js
+log('', 'it broke!');
+// vs
+log.err('it broke!');
+```
 
 ## License
 
