@@ -7,7 +7,12 @@
 fs.readFile('LICENSE', log('Success!', 'Error :<'));
 
 // Or promises
-foo(10).catch(log('Error happened'));
+Promise.reject(new Error('hi'))
+.catch(log('', 'Error happened'));
+
+// You can use log.err above instead:
+Promise.reject(new Error('hi again'))
+.catch(log.err('Error happened'));
 ```
 
 ## Installation
@@ -16,12 +21,11 @@ foo(10).catch(log('Error happened'));
 $ npm install --save log-cb
 ```
 
-## Usage
+## API
 
-```js
-var logCb = require('log-cb');
-logCb();
-```
+### `log(passMessage, [failMessage])`
+Log custom message for passing
+ - `passMessage`: What to log if
 
 ## License
 

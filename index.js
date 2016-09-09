@@ -1,5 +1,6 @@
 var chalk = require('chalk');
 
+log.err = logError;
 module.exports = log;
 
 function log (passMessage, failMessage) {
@@ -21,4 +22,8 @@ function log (passMessage, failMessage) {
   function defaultPassLog (item) {
     if (passMessage) return console.log(chalk.green(passMessage));
   }
+}
+
+function logError (failMessage, passMessage) {
+  return log(passMessage, failMessage);
 }
